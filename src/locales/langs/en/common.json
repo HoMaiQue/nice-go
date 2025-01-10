@@ -2,5 +2,17 @@
   "demo": {
     "lang": "English",
     "description": "The starting point for your next project is based on MUI. Easy customization helps you build apps faster and better."
+  },
+
+  "signInPage": {
+    "welcome": "Hi, Welcome back!",
+    "optimizeWorkflow": "More effectively with optimized workflows",
+    "signInAccount": "Sign in to your account",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign in",
+    "dontHaveAccount": "Don’t have an account? ",
+    "getStarted": "Get started"
   }
 }

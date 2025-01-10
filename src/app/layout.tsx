@@ -6,11 +6,14 @@ import type { Viewport } from 'next';
 
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
 
+import Provider from 'src/utils/provider';
+
 import { CONFIG } from 'src/config-global';
 import { primary } from 'src/theme/core/palette';
 import { schemeConfig } from 'src/theme/scheme-config';
 import { ThemeProvider } from 'src/theme/theme-provider';
 
+import { Snackbar } from 'src/components/snackbar';
 import { ProgressBar } from 'src/components/progress-bar';
 import { MotionLazy } from 'src/components/animate/motion-lazy';
 import { SettingsDrawer, defaultSettings, SettingsProvider } from 'src/components/settings';
@@ -51,9 +54,10 @@ export default async function RootLayout({ children }: Props) {
           <SettingsProvider settings={defaultSettings}>
             <ThemeProvider>
               <MotionLazy>
+                <Snackbar />
                 <ProgressBar />
                 <SettingsDrawer />
-                {children}
+                <Provider>{children}</Provider>
               </MotionLazy>
             </ThemeProvider>
           </SettingsProvider>

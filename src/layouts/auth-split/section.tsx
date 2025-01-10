@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 
 import { RouterLink } from 'src/routes/components';
 
+import { useTranslate } from 'src/locales';
 import { CONFIG } from 'src/config-global';
 import { varAlpha, bgGradient } from 'src/theme/styles';
 
@@ -38,7 +39,7 @@ export function Section({
   ...other
 }: SectionProps) {
   const theme = useTheme();
-
+  const { t } = useTranslate();
   return (
     <Box
       sx={{
@@ -71,7 +72,7 @@ export function Section({
 
         {subtitle && (
           <Typography sx={{ color: 'text.secondary', textAlign: 'center', mt: 2 }}>
-            {subtitle}
+            {t('signInPage.optimizeWorkflow')}
           </Typography>
         )}
       </div>
