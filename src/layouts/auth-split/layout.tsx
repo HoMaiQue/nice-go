@@ -3,13 +3,10 @@
 import type { Theme, SxProps, Breakpoint } from '@mui/material/styles';
 
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Alert from '@mui/material/Alert';
 
-import { paths } from 'src/routes/paths';
-import { RouterLink } from 'src/routes/components';
-
 import { CONFIG } from 'src/config-global';
+import { useTranslate } from 'src/locales';
 
 import { Logo } from 'src/components/logo';
 
@@ -35,6 +32,7 @@ export type AuthSplitLayoutProps = {
 };
 
 export function AuthSplitLayout({ sx, section, children, header }: AuthSplitLayoutProps) {
+  const { t } = useTranslate();
   const layoutQuery: Breakpoint = 'md';
 
   return (
@@ -90,7 +88,7 @@ export function AuthSplitLayout({ sx, section, children, header }: AuthSplitLayo
     >
       <Main layoutQuery={layoutQuery}>
         <Section
-          title={section?.title}
+          title={t('signInPage.welcome')}
           layoutQuery={layoutQuery}
           imgUrl={section?.imgUrl}
           method={CONFIG.auth.method}
