@@ -72,6 +72,17 @@ export const navData = [
           { title: 'Account', path: paths.dashboard.user.account },
         ],
       },
+      {
+        title: 'Tour',
+        path: paths.dashboard.tour.root,
+        icon: ICONS.tour,
+        children: [
+          { title: 'List', path: paths.dashboard.tour.root },
+          { title: 'Details', path: paths.dashboard.tour.demo.details },
+          { title: 'Create', path: paths.dashboard.tour.new },
+          { title: 'Edit', path: paths.dashboard.tour.demo.edit },
+        ],
+      },
     ],
   },
 ];
