@@ -10,6 +10,7 @@ import Provider from 'src/utils/provider';
 
 import { CONFIG } from 'src/config-global';
 import { primary } from 'src/theme/core/palette';
+import { LocalizationProvider } from 'src/locales';
 import { schemeConfig } from 'src/theme/scheme-config';
 import { ThemeProvider } from 'src/theme/theme-provider';
 
@@ -49,19 +50,20 @@ export default async function RootLayout({ children }: Props) {
           defaultMode={schemeConfig.defaultMode}
           modeStorageKey={schemeConfig.modeStorageKey}
         />
-
-        <AuthProvider>
-          <SettingsProvider settings={defaultSettings}>
-            <ThemeProvider>
-              <MotionLazy>
-                <Snackbar />
-                <ProgressBar />
-                <SettingsDrawer />
-                <Provider>{children}</Provider>
-              </MotionLazy>
-            </ThemeProvider>
-          </SettingsProvider>
-        </AuthProvider>
+        <LocalizationProvider>
+          <AuthProvider>
+            <SettingsProvider settings={defaultSettings}>
+              <ThemeProvider>
+                <MotionLazy>
+                  <Snackbar />
+                  <ProgressBar />
+                  <SettingsDrawer />
+                  <Provider>{children}</Provider>
+                </MotionLazy>
+              </ThemeProvider>
+            </SettingsProvider>
+          </AuthProvider>
+        </LocalizationProvider>
       </body>
     </html>
   );
